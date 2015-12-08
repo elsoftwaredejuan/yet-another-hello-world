@@ -15,4 +15,10 @@ set (Tutorial_VERSION_MINOR 0)
 include_directories("${PROJECT_BINARY_DIR}")
 
 add_executable(hello_world foo.cpp main.cpp)
+
+if(CMAKE_COMPILER_IS_GNUCXX)
+    add_definitions(-std=gnu++0x)
+endif()
+
 set_property(TARGET hello_world PROPERTY CXX_STANDARD 11)
+
