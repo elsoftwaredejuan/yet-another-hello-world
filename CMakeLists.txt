@@ -8,16 +8,11 @@ project (hello-world)
 set (Tutorial_VERSION_MAJOR 1)
 set (Tutorial_VERSION_MINOR 0)
 
-if(CMAKE_COMPILER_IS_GNUCXX)
-    add_definitions(-std=gnu++0x)
-endif()
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wc++11-extensions")
-
-message( STATUS 'CMAKE_BINARY_DIR ' ${CMAKE_BINARY_DIR})
+#message( STATUS 'CMAKE_BINARY_DIR ' ${CMAKE_BINARY_DIR})
 
 # add the binary tree to the search path for include files
 # so that we will find TutorialConfig.h
 include_directories("${PROJECT_BINARY_DIR}")
 
 add_executable(hello_world foo.cpp main.cpp)
+set_property(TARGET hello_world PROPERTY CXX_STANDARD 11)
