@@ -7,7 +7,7 @@
 //
 
 #include <iostream>
-#include "foo.hpp"
+#include "hello-dll/foo.hpp"
 
 int main(int argc, const char * argv[]) {
     // insert code here...

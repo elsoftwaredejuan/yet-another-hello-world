@@ -2,23 +2,15 @@
 # refer to the root source directory of the project as  and
 # to the root binary directory of the project as .
 cmake_minimum_required (VERSION 2.8.11)
-project (hello-world)
 
-# The version number.
-set (Tutorial_VERSION_MAJOR 1)
-set (Tutorial_VERSION_MINOR 0)
+set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/build)
+ 
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+ 
+set(PROJECT_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
+ 
+include_directories("${PROJECT_INCLUDE_DIR}")
+include_directories("${PROJECT_SOURCE_DIR}/src")
 
-#message( STATUS 'CMAKE_BINARY_DIR ' ${CMAKE_BINARY_DIR})
-
-# add the binary tree to the search path for include files
-# so that we will find TutorialConfig.h
-include_directories("${PROJECT_BINARY_DIR}")
-
-add_executable(hello_world foo.cpp main.cpp)
-
-#if(CMAKE_COMPILER_IS_GNUCXX)
-    add_definitions(-std=gnu++0x)
-#endif()
-
-set_property(TARGET hello_world PROPERTY CXX_STANDARD 11)
-
+add_subdirectory(src)
