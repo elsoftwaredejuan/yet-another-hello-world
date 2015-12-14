@@ -9,4 +9,4 @@ add_definitions(-std=gnu++0x)
 
 add_subdirectory(hello-dll)
 add_subdirectory(hello-exe)
-add_subdirectory(test)
+add_subdirectory(tests)
