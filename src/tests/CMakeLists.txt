@@ -4,15 +4,12 @@ project(basic_test)
 ################################
 # GTest
 ################################
-ADD_SUBDIRECTORY (gtest-1.6.0)
 enable_testing()
-include_directories(${gtest_SOURCE_DIR}/include ${gtest_SOURCE_DIR})
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
 
-################################
-# Unit Tests
-################################
-# Add test cpp file
-add_executable( runUnitTests test1.cpp )
-# Link test executable against gtest & gtest_main
-target_link_libraries(runUnitTests gtest gtest_main)
-add_test( runUnitTests runUnitTests )
+
+add_executable(foo test1.cc)
+target_link_libraries(foo ${GTEST_BOTH_LIBRARIES})
+
+add_test(AllTestsInFoo foo)
