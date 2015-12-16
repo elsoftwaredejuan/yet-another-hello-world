@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 Foo::Foo(){}
 std::vector<int> Foo::do_something(){
