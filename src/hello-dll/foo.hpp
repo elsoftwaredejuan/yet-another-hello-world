@@ -10,12 +10,13 @@
 #define foo_hpp
 
 #include <stdio.h>
+#include <vector>
 
 class Foo
 {
 public:
     Foo();
-    void do_something();
+    std::vector<int> do_something();
 };
 
 #endif /* foo_hpp */
