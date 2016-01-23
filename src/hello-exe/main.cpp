@@ -2,9 +2,6 @@
 //  main.cpp
 //  Hellow-World
 //
-//  Created by Juan Morales Velasco on 07/11/15.
-//  Copyright © 2015 Juan Morales Velasco. All rights reserved.
-//
 
 #include <iostream>
 #include "hello-dll/foo.hpp"
